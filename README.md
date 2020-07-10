@@ -1,2 +1,2 @@
-# multimedia-engineering-exercises
-multimedia engineering exercises code
+This is a repository about multimedia engineering exercises.
+
