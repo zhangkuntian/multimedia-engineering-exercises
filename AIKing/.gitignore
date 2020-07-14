@@ -1,0 +1,4 @@
+data/*
+runs/
+output_dir/
+.ipynb_checkpoints/
