@@ -1,6 +1,0 @@
-[submodule "AIKing/baseline"]
-	path = AIKing/baseline
-	url = https://github.com/cl-tohoku/JAQKET_baseline.git
-[submodule "AIKing/transformers"]
-	path = AIKing/transformers
-	url = https://github.com/huggingface/transformers.git

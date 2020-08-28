@@ -1,4 +1,6 @@
+baseline/
 data/*
 runs/
-output_dir/
+output_dir*/
+working_dir/
 .ipynb_checkpoints/
