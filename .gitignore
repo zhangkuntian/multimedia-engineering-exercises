@@ -1,0 +1,9 @@
+baseline/
+data/
+runs/
+output_dir*/
+working_dir/
+.ipynb_checkpoints/
+/.vscode/
+__pycache__/
+lightning_logs/
