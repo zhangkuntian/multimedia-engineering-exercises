@@ -1,7 +1,8 @@
 baseline/
 data/
 runs/
-output_dir*/
+output*/
+checkpoints/
 working_dir/
 .ipynb_checkpoints/
 /.vscode/
