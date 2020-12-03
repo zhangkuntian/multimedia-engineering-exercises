@@ -492,11 +492,11 @@ def evaluate(args, model, tokenizer, prefix="", evaluate=True, test=False):
                     # "labels": batch[3],
                 }
                 outputs = model(**inputs)
-                if not test:
-                    tmp_eval_loss, logits = outputs[:2]
-                    eval_loss += tmp_eval_loss.mean().item()
-                else:
-                    logits = outputs[0]
+                # if not test:
+                #     tmp_eval_loss, logits = outputs[:2]
+                #     eval_loss += tmp_eval_loss.mean().item()
+                # else:
+                logits = outputs[0]
 
             nb_eval_steps += 1
             if preds is None:
@@ -570,7 +570,7 @@ def main():
                         action="store_true", help="")
     # parser.add_argument(
     #     "--do_lower_case", action='store_true', help="")
-    # parser.add_argument("--train_num_options", default=4, type=int, help="")
+    parser.add_argument("--train_num_options", default=20, type=int, help="")
     parser.add_argument("--eval_num_options", default=20, type=int, help="")
     # parser.add_argument("--per_gpu_train_batch_size",
     #                     default=8, type=int, help="")
@@ -672,10 +672,10 @@ def main():
             model = model_class.from_pretrained(checkpoint)
             model.to(args.device)
 
-            # result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=False)  # for train data
-            # result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=True, test=False)  # for dev1 data
-            # result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=True)  # for dev2 data
-            result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=True)  # for LB data
+            result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=False)  # for train data
+            result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=True, test=False)  # for dev1 data
+            result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=True)  # for dev2 data
+            result = evaluate(args, model, tokenizer, prefix=prefix, evaluate=False, test=True)  # for LB (test) data
 
             result = dict((k + "_{}".format(global_step), v)
                           for k, v in result.items())
