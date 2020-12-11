@@ -5,10 +5,10 @@
     $ mkdir AIKing/outputs
     ```
     Save output files to directories. \
-    (01_simple, 02_bert, 03_albert, 04_bert_last3, 05_bert_last3cls):
+    (01_seq2seq, 02_bert, 03_albert, 04_bert_last3, 05_bert_last3cls):
     ```
     outputs/
-    ├── 01_simple
+    ├── 01_seq2seq
     │   ├── dev1_output_logits.csv
     │   ├── dev2_output_logits.csv
     │   ├── test_output_logits.csv

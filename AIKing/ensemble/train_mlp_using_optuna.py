@@ -54,8 +54,8 @@ def load_outputs(data_dir: Path, _softmax=True):
 
     tmp = {'train': [], 'dev1': [], 'dev2': [], 'test': []}
     for dir in subdirs:
-        # if 'rnn' in dir.name:
-        #     continue
+        if 'seq2seq' in dir.name:
+            continue
         for name, outputs in tmp.items():
             path = dir / f'{name}_output_logits.csv'
             logging.info(f'loads from `{path}`')
@@ -79,7 +79,7 @@ def load_labels(data_dir: Path):
         name = f.stem.split('_')[0]
         if name == 'aio':
             name = 'test'
-        logging.info(f'loads from {f}')
+        logging.info(f'loads from `{f}`')
         with f.open('r') as fin:
             for line in fin:
                 data_raw = json.loads(line.strip())
