@@ -333,14 +333,12 @@ ALL_MODELS = (
     "cl-tohoku/bert-base-japanese-whole-word-masking",
     "cl-tohoku/bert-base-japanese-char",
     "cl-tohoku/bert-base-japanese-char-whole-word-masking",
-    "bandainamco-mirai/distilbert-base-japanese",
     "ALINEAR/albert-japanese-v2",
 )
 
 MODEL_CLASSES = {
     "bert": (AutoConfig, AutoModelForMultipleChoice, BertJapaneseTokenizer),
     "albert": (AutoConfig, AutoModelForMultipleChoice, AutoTokenizer),
-    "distilbert": (AutoConfig, AutoModelForMultipleChoice, AutoTokenizer),
 }
 
 

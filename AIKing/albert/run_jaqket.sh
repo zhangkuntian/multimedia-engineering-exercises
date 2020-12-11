@@ -11,12 +11,10 @@ ENTITY=candidate_entities.json.gz
 
 MODEL="ALINEAR/albert-japanese-v2"
 MODEL_TYPE="albert"
-# MODEL="bandainamco-mirai/distilbert-base-japanese"
-# MODEL_TYPE="distilbert"
 # MODEL="cl-tohoku/bert-base-japanese-whole-word-masking"
 # MODEL_TYPE="bert"
 
-python3 jaqket_albert_distilbert.py  \
+python3 jaqket_albert.py  \
   --data_dir ${DDIR} \
   --model_name_or_path ${MODEL} \
   --model_type ${MODEL_TYPE} \
